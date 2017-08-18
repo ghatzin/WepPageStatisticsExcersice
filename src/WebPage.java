@@ -23,7 +23,7 @@ public class WebPage
 		EditorKit kit = new HTMLEditorKit();
         Document doc = kit.createDefaultDocument();
 
-        // The Document class does not yet handle charset's properly.
+        
         doc.putProperty("IgnoreCharsetDirective", Boolean.TRUE);
 
         // Create a reader on the HTML content.
@@ -31,11 +31,11 @@ public class WebPage
        
         Reader rd = getReader(url);
 
-        // Parse the HTML.
+        
 
         kit.read(rd, doc, 0);
 
-        //  The HTML text is now stored in the document
+       
 
         String plainText=doc.getText(0, doc.getLength());
 		return plainText;
@@ -44,7 +44,7 @@ public class WebPage
 	
 	private  Reader getReader(URL url)  throws IOException
     {
-		        // Retrieve from Internet.
+		       
 		      
 		            URLConnection conn = url.openConnection();
 		            return new InputStreamReader(conn.getInputStream());	      
